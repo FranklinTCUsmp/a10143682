@@ -42,8 +42,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alimentacion.cs" />
+    <Compile Include="CalificacionHospedaje.cs" />
+    <Compile Include="CategoriaAlimentacion.cs" />
+    <Compile Include="CategoriaHospedaje.cs" />
+    <Compile Include="CategoriaTransporte.cs" />
+    <Compile Include="Cliente.cs" />
+    <Compile Include="ComprobantePago.cs" />
+    <Compile Include="Empleado.cs" />
+    <Compile Include="Hospedaje.cs" />
+    <Compile Include="MedioPago.cs" />
+    <Compile Include="Paquete.cs" />
+    <Compile Include="Persona.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServicioHospedaje.cs" />
+    <Compile Include="ServicioTuristico.cs" />
+    <Compile Include="TipoComprobante.cs" />
+    <Compile Include="TipoHospedaje.cs" />
+    <Compile Include="TipoTransporte.cs" />
+    <Compile Include="Transporte.cs" />
+    <Compile Include="VentaPaquete.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
