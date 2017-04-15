@@ -9,7 +9,7 @@ namespace a10143682
     class Cliente:Persona
     {
         
-             private string _idCliente;
+        private string _idCliente;
         /* Para identificar al cliente usaremos el documento de identidad DNI,         *
          * para actualizaciones se tomará en cuenta diferentes documentos de identidad */
 

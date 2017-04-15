@@ -8,5 +8,17 @@ namespace a10143682
 {
     class MedioPago
     {
+        private String _medioPago;
+
+        public String medioPago
+        {
+            get { return _medioPago; }
+            set { _medioPago = value; }
+        }
+        public MedioPago(string medioPago)
+        {
+            this.medioPago = medioPago;
+        }
+
     }
 }
