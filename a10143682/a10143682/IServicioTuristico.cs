@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace a10143682
 {
-    class ServicioTuristico
+    interface IServicioTuristico
     {
+        double CalcularCostoServicio();
     }
 }

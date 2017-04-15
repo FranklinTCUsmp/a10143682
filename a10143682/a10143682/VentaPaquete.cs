@@ -11,6 +11,7 @@ namespace a10143682
         private MedioPago _medioPago;
         private ComprobantePago _comprobantePago;
 
+
         public MedioPago medioPago
         {
             get { return _medioPago; }

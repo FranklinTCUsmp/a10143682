@@ -12,7 +12,6 @@ namespace a10143682
         {
             Empleado obj = new Empleado("Caja1", "Franklin", "Tello");
             Cliente obj2 = new Cliente("Clien0001", "Enzo", "Tello");
-           // ComprobantePago obj331 = new ComprobantePago(1000, "Factura");
             VentaPaquete obj3 = new VentaPaquete(1000, "Factura", "Tarjeta");
 
 

@@ -8,5 +8,16 @@ namespace a10143682
 {
     class CalificacionHospedaje
     {
+        private int _calificacionHospedaje;
+
+        public int calificacionHospedaje
+        {
+            get { return _calificacionHospedaje; }
+            set { _calificacionHospedaje = value; }
+        }
+        public CalificacionHospedaje(int calificacionHospedaje)
+        {
+            this.calificacionHospedaje = calificacionHospedaje;
+        }
     }
 }
