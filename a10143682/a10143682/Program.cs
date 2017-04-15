@@ -12,7 +12,7 @@ namespace a10143682
         {
             Empleado obj = new Empleado("Caja1", "Franklin", "Tello");
             Cliente obj2 = new Cliente("Clien0001", "Enzo", "Tello");
-            VentaPaquete obj3 = new VentaPaquete(1000, "Factura", "Tarjeta");
+            VentaPaquete obj3 = new VentaPaquete(1000, "Factura", "Tarjeta",01);
 
 
             
@@ -30,7 +30,13 @@ namespace a10143682
             Console.WriteLine("Condiciones de Pago:");
             Console.WriteLine("Medio de pago: " + obj3.medioPago.medioPago);
             Console.WriteLine("Tipo de recivo  " + obj3.comprobantePago.tipoComprobate.tipoComprobante);
-          
+            Console.WriteLine("----------------------------------------------");
+            Console.WriteLine("----------------------------------------------");
+            Console.WriteLine("----------------------------------------------");
+            Console.WriteLine(" "+obj3.paquete.idpaquete);
+            Console.WriteLine("" + obj3.paquete.iservicioTuristico.Definirservicio());
+            Console.WriteLine(" " + obj3.paquete.iservicioTuristico.CalcularCostoServicio());
+
 
             //Parts.Find (x => x.PartName.Contains ("asiento"))   parts.Exists(x => x.PartId == 1444));
             /*

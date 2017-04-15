@@ -18,7 +18,7 @@ namespace a10143682
 
         public Hospedaje()
         {
-            _tipoHospedaje = new TipoHospedaje(DefinirTipoHospedaje());
+            tipoHospedaje = new TipoHospedaje(DefinirTipoHospedaje());
         }
 
         public string DefinirTipoHospedaje ()
@@ -29,10 +29,35 @@ namespace a10143682
             return tipoHotel[tHIndex];
         }
 
+        public double CalcularCostoTipoHospedaje()
+        {
+            double[] costoHotel = { 400.00, 2000.00, 100.00, 50.00 };          
+            string caseSwitch = this.tipoHospedaje.tipoHospedaje;
+            switch (caseSwitch)
+            {
+                case "Hostel":
+                    return costoHotel[0];
+                    break;
+                case "Hostal":
+                    return costoHotel[1];
+                    break;
+                case "Backpacker":
+                    return costoHotel[2];
+                    break;
+                default:
+                    return costoHotel[3];
+                    break;
+            }
+        }
+
         public double CalcularCostoServicio()
         {
-            return 0.0;
+            return CalcularCostoTipoHospedaje();
         }
-        
+       public string Definirservicio()
+        {
+            return this.tipoHospedaje.tipoHospedaje;
+        }
+
     }
 }
