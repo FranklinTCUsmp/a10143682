@@ -15,18 +15,8 @@ namespace a10143682
             get { return _iservicioTuristico; }
             set { _iservicioTuristico = value; }
         }
-
-        private int _idpaquete;
-
-        public int idpaquete
+        public Paquete() :base()
         {
-            get { return _idpaquete; }
-            set { _idpaquete = value; }
-        }
-
-        public Paquete(int idpaquete) :base()
-        {
-            this.idpaquete = idpaquete;
             _iservicioTuristico = new Hospedaje();
         }
 

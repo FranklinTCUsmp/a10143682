@@ -12,20 +12,20 @@ namespace a10143682
         private string _idCliente;
         /* Para identificar al cliente usaremos el documento de identidad DNI,         *
          * para actualizaciones se tomará en cuenta diferentes documentos de identidad */
-
-        public string idCliente
+      public string idCliente
         {
             get { return _idCliente; }
             set { _idCliente = value; }
         }
 
 
-        public Cliente()
-        {
-        }
-        public Cliente(string idCliente, string nombre, string apellido) : base(nombre, apellido)
+        public Cliente(string idCliente)
         {
             this.idCliente = idCliente;
+        }
+        public Cliente( string nombre, string apellido) : base(nombre, apellido)
+        {
+           
         }
         
     }

@@ -17,12 +17,13 @@ namespace a10143682
         }
 
 
-        public Empleado()
-        {        
-        }
-        public Empleado(string idEmpleado , string nombre, string apellido) : base(nombre, apellido)
+        public Empleado(string idEmpleado)
         {
-           this.idEmpleado = idEmpleado;
+            this.idEmpleado = idEmpleado;
+        }
+        public Empleado(string nombre, string apellido) : base(nombre, apellido)
+        {
+            
         }
     }
 }

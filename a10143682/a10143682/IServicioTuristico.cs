@@ -8,8 +8,8 @@ namespace a10143682
 {
     interface IServicioTuristico
     {
-        string Definirservicio();
-        double CalcularCostoServicio();
+        void DefinirservicioTuristico();
+        double CalcularCostoTuristico();
 
     }
 }
