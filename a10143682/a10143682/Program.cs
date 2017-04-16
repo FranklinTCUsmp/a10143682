@@ -18,7 +18,7 @@ namespace a10143682
         }
         public Program()
         {
-            ventaPaquete = new List<VentaPaquete>(5);
+            ventaPaquete = new List<VentaPaquete>(6);
            
         }
                   
@@ -34,21 +34,29 @@ namespace a10143682
             Thread.Sleep(120);
             obj.ventaPaquete.Add(new VentaPaquete(04));
             Thread.Sleep(120);
+            obj.ventaPaquete.Add(new VentaPaquete(05));
+            Thread.Sleep(120);
+            obj.ventaPaquete.Add(new VentaPaquete(06));
+            Thread.Sleep(120);
             foreach (VentaPaquete element in obj.ventaPaquete)
             {
                 Console.BackgroundColor = ConsoleColor.White;
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
                 Console.WriteLine("********************************************");
                 Console.WriteLine("********************************************");
-                Console.WriteLine("#Numero de Recibo: "+ element.comprobantePago.idcomprobantePago);
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine("#Numero de Recibo: #### "+ element.comprobantePago.idcomprobantePago);
+                Console.ForegroundColor = ConsoleColor.DarkBlue;
                 Console.WriteLine("Medio de Pago: " + element.medioPago.medioPago);
-                Console.WriteLine("Tipo   de Recibo: " + element.comprobantePago.tipoComprobate.tipoComprobante);
+                Console.WriteLine("Tipo de Recibo: " + element.comprobantePago.tipoComprobate.tipoComprobante);
                 Console.WriteLine("Cliente: "+element.cliente.nombre+" "+element.cliente.apellido);
                 Console.WriteLine("********************************************");
                 Console.WriteLine("#Caja: "+element.empleado.idEmpleado);
                 Console.WriteLine("Cajero: " + element.empleado.nombre+" "+element.empleado.apellido);
                 Console.WriteLine("********************************************");
+                Console.WriteLine();
                 Console.WriteLine("Paquetes Adquiridos: " + element.paquete.Capacity);
+                Console.WriteLine();
 
                 foreach (Paquete elemento1 in element.paquete)
                 {
@@ -56,9 +64,26 @@ namespace a10143682
                     elemento1.iservicioTuristicoH.DefinirservicioTuristico();
                     Console.WriteLine("Costo Total del paquete adquiridos por concenpto de Transporte: " + elemento1.iservicioTuristicoT.CalcularCostoTuristico());
                     elemento1.iservicioTuristicoT.DefinirservicioTuristico();
+                    Console.WriteLine("Costo Total del paquete adquiridos por concenpto de Alimentacion: " + elemento1.iservicioTuristicoA.CalcularCostoTuristico());
+                    elemento1.iservicioTuristicoA.CalcularCostoTuristico();
+                    Console.WriteLine("********************************************");
+                    double aux = elemento1.iservicioTuristicoH.CalcularCostoTuristico()+elemento1.iservicioTuristicoT.CalcularCostoTuristico() + elemento1.iservicioTuristicoA.CalcularCostoTuristico();
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine("Costo Total del paquete : " + aux);
+                    Console.ForegroundColor = ConsoleColor.DarkBlue;
+
+                    Console.WriteLine();
                 }
-                Console.WriteLine("********************************************");
+               
+
+
             }
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("*************Gerente General****************");
+            Console.WriteLine("*********Franklin Tello Cardenas************");
+            Console.WriteLine("********************************************");
+            Console.ForegroundColor = ConsoleColor.Black;
         }
        
 

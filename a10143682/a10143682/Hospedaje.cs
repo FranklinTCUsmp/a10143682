@@ -8,13 +8,6 @@ namespace a10143682
 {
     class Hospedaje : IServicioTuristico
     {
-        private double _costoTotalHospedaje;
-
-        public double costoTotalHospedaje
-        {
-            get { return _costoTotalHospedaje; }
-            set { _costoTotalHospedaje = value; }
-        }
 
         private TipoHospedaje _tipoHospedaje;
 
@@ -23,15 +16,6 @@ namespace a10143682
             get { return _tipoHospedaje; }
             set { _tipoHospedaje = value; }
         }
-
-        private CategoriaAlimentacion _categoriaAlimentacion;
-
-        public CategoriaAlimentacion categoriaAlimentacion
-        {
-            get { return _categoriaAlimentacion; }
-            set { _categoriaAlimentacion = value; }
-        }
-
 
         private CategoriaHospedaje _categoriaHospedaje;
 
@@ -57,15 +41,6 @@ namespace a10143682
             return tipoCategoriaHospedaje[tHIndex];
         }
 
-        public string DefinirTipoAlimentacion()
-        {
-            Random aleatorio = new Random();
-            string[] tipoAlimento = { "Cocina Italiana","Cocina Española","Cocina China",
-                                    "Cocina Tailandesa","Cocina Nuevo Latino"};
-            int tHIndex = aleatorio.Next(0, tipoAlimento.Length);
-            return tipoAlimento[tHIndex];
-        }
-
         public string DefinirTipoHospedaje ()
         {
             Random aleatorio = new Random();
@@ -73,6 +48,15 @@ namespace a10143682
             int tHIndex = aleatorio.Next(0, tipoHotel.Length);        
             return tipoHotel[tHIndex];
         }
+
+        public string Definirservicio()
+        {
+            Random aleatorio = new Random();
+            string[] Definirservicio = { "Lavanderia", "Planchado", "Room Service", "Otros" };
+            int tHIndex = aleatorio.Next(0, Definirservicio.Length);
+            return Definirservicio[tHIndex];
+        }
+
 
         public double CalcularCostoTipoHospedaje()
         {   if (tipoHospedaje.Equals("Sin Categoria"))
@@ -128,45 +112,11 @@ namespace a10143682
             
         }
 
-        public double CalcularCostoCategoriaAlimentacion()
-        {
-            double[] costoCategoriaAlimentacion = { 200.00, 190.00, 170.00, 160.00, 150.00 };
-            string caseSwitch = this.categoriaAlimentacion.categoriaAlimentacion;
-            switch (caseSwitch)
-            {
-                case "Cocina Italiana":
-                    return costoCategoriaAlimentacion[0];
-                    break;
-                case "Cocina Nuevo Latino":
-                    return costoCategoriaAlimentacion[1];
-                    break;
-                case "Cocina China":
-                    return costoCategoriaAlimentacion[2];
-                    break;
-                case "Cocina Tailandesa":
-                    return costoCategoriaAlimentacion[3];
-                    break;
-                default:
-                    return costoCategoriaAlimentacion[4];
-                    break;
-            }
-        }
-        
-        public string Definirservicio()
-        {
-            Random aleatorio = new Random();
-            string[] Definirservicio = { "Lavanderia", "Planchado", "Room Service", "Otros" };
-            int tHIndex = aleatorio.Next(0, Definirservicio.Length);
-            return Definirservicio[tHIndex];
-        }
-
-       
+         
         
         public Hospedaje()
              {
                 tipoHospedaje = new TipoHospedaje(DefinirTipoHospedaje());
-                categoriaAlimentacion = new CategoriaAlimentacion(DefinirTipoAlimentacion());
-
                 if (tipoHospedaje.Equals("Hotel"))
                 {
                     categoriaHospedaje = new CategoriaHospedaje(DefinirCategoriaHospedaje());
@@ -176,13 +126,12 @@ namespace a10143682
                     categoriaHospedaje = new CategoriaHospedaje("Sin Categoria");
                 }
 
-                costoTotalHospedaje = CalcularCostoTuristico();
                 servicioHospedaje = new ServicioHospedaje(Definirservicio());
              }
 
         public double CalcularCostoTuristico()
         {
-            return CalcularCostoTipoHospedaje() + CalcularCostoCategoriaAlimentacion();
+            return CalcularCostoTipoHospedaje();
         }
 
         public void DefinirservicioTuristico()
