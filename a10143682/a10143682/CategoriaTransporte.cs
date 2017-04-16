@@ -8,5 +8,18 @@ namespace a10143682
 {
     class CategoriaTransporte
     {
+        private string _categoriaTransporte;
+
+        public string categoriaTransporte
+        {
+            get { return _categoriaTransporte; }
+            set { _categoriaTransporte = value; }
+        }
+
+        public CategoriaTransporte(string categoriaTransporte)
+        {
+            this.categoriaTransporte = categoriaTransporte;
+        }
+
     }
 }

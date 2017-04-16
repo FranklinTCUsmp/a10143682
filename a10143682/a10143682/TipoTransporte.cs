@@ -8,5 +8,17 @@ namespace a10143682
 {
     class TipoTransporte
     {
+        private String _tipoTranporte;
+
+        public String tipoTransporte
+        {
+            get { return _tipoTranporte; }
+            set { _tipoTranporte = value; }
+        }
+        public TipoTransporte(String tipoTransporte)
+        {
+            this.tipoTransporte = tipoTransporte;
+        }
+
     }
 }

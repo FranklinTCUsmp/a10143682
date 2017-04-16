@@ -52,8 +52,10 @@ namespace a10143682
 
                 foreach (Paquete elemento1 in element.paquete)
                 {
-                    Console.WriteLine("Costo Total del paquete adquiridos: " + elemento1.iservicioTuristico.CalcularCostoTuristico());
-                    elemento1.iservicioTuristico.DefinirservicioTuristico();
+                    Console.WriteLine("Costo Total del paquete adquiridos por concenpto de Hotel: " + elemento1.iservicioTuristicoH.CalcularCostoTuristico());
+                    elemento1.iservicioTuristicoH.DefinirservicioTuristico();
+                    Console.WriteLine("Costo Total del paquete adquiridos por concenpto de Transporte: " + elemento1.iservicioTuristicoT.CalcularCostoTuristico());
+                    elemento1.iservicioTuristicoT.DefinirservicioTuristico();
                 }
                 Console.WriteLine("********************************************");
             }

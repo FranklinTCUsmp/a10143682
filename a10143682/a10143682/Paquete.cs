@@ -8,16 +8,27 @@ namespace a10143682
 {
     class Paquete 
     {   
-        private IServicioTuristico _iservicioTuristico;
+        private IServicioTuristico _iservicioTuristicoT;
 
-        public IServicioTuristico iservicioTuristico
+        public IServicioTuristico iservicioTuristicoT
         {
-            get { return _iservicioTuristico; }
-            set { _iservicioTuristico = value; }
+            get { return _iservicioTuristicoT; }
+            set { _iservicioTuristicoT = value; }
         }
+
+        private IServicioTuristico _iservicioTuristicoH;
+
+        public IServicioTuristico iservicioTuristicoH
+        {
+            get { return _iservicioTuristicoH; }
+            set { _iservicioTuristicoH = value; }
+        }
+    
         public Paquete() :base()
         {
-            _iservicioTuristico = new Hospedaje();
+            iservicioTuristicoH = new Hospedaje();
+            iservicioTuristicoT = new Transporte();
+
         }
 
     }
